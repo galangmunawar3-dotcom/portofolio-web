@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a0000"/>
+      <stop offset="100%" stop-color="#0a0000"/>
+    </radialGradient>
+    <linearGradient id="mask-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e62429"/>
+      <stop offset="100%" stop-color="#8b0000"/>
+    </linearGradient>
+    <linearGradient id="eye-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#ff6b6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="200" fill="url(#bg)"/>
+  <!-- Outer glow -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="#e62429" stroke-width="2" opacity="0.15"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#e62429" stroke-width="1" opacity="0.1"/>
+
+  <!-- Spider-Man Mask -->
+  <g transform="translate(200,200)">
+    <!-- Head shape -->
+    <path d="M-75,-40 Q-80,-90 -40,-110 Q0,-125 40,-110 Q80,-90 75,-40 L70,20 Q60,70 0,85 Q-60,70 -70,20 Z" fill="url(#mask-red)"/>
+    <!-- Web pattern on mask -->
+    <path d="M0,-115 L0,85" stroke="#1a0000" stroke-width="2.5" opacity="0.6"/>
+    <path d="M-40,-110 L-35,80" stroke="#1a0000" stroke-width="2" opacity="0.4"/>
+    <path d="M40,-110 L35,80" stroke="#1a0000" stroke-width="2" opacity="0.4"/>
+    <path d="M-70,-60 L65,45" stroke="#1a0000" stroke-width="2" opacity="0.4"/>
+    <path d="M70,-60 L-65,45" stroke="#1a0000" stroke-width="2" opacity="0.4"/>
+    <path d="M-75,-20 L78,0" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <path d="M-70,15 L70,15" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <path d="M-60,40 L60,40" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <path d="M-50,55 L50,55" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <!-- Web curved lines -->
+    <path d="M-40,-110 Q-60,-60 -70,-20" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <path d="M40,-110 Q60,-60 70,-20" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <path d="M-70,20 Q-40,50 0,85" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <path d="M70,20 Q40,50 0,85" stroke="#1a0000" stroke-width="1.5" opacity="0.3"/>
+    <!-- Eyes -->
+    <path d="M-50,-30 Q-35,-55 -15,-35 Q-25,-20 -40,-20 Q-48,-22 -50,-30 Z" fill="url(#eye-glow)" opacity="0.95"/>
+    <path d="M50,-30 Q35,-55 15,-35 Q25,-20 40,-20 Q48,-22 50,-30 Z" fill="url(#eye-glow)" opacity="0.95"/>
+    <!-- Eye outline -->
+    <path d="M-50,-30 Q-35,-55 -15,-35 Q-25,-20 -40,-20 Q-48,-22 -50,-30 Z" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M50,-30 Q35,-55 15,-35 Q25,-20 40,-20 Q48,-22 50,-30 Z" fill="none" stroke="#000" stroke-width="2"/>
+    <!-- Highlight on eyes -->
+    <ellipse cx="-35" cy="-32" rx="6" ry="4" fill="#fff" opacity="0.6"/>
+    <ellipse cx="35" cy="-32" rx="6" ry="4" fill="#fff" opacity="0.6"/>
+  </g>
+
+  <!-- Spider logo on chest (small under mask) -->
+  <g transform="translate(200,325)" fill="#e62429" opacity="0.6">
+    <ellipse cx="0" cy="0" rx="6" ry="9"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="5"/>
+    <path d="M-3,-5 Q-10,-15 -14,-8" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M-3,-3 Q-12,-10 -16,-3" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M-3,-1 Q-12,-3 -15,2" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M-3,1 Q-10,0 -12,6" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M3,-5 Q10,-15 14,-8" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M3,-3 Q12,-10 16,-3" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M3,-1 Q12,-3 15,2" stroke="#e62429" stroke-width="1.5" fill="none"/>
+    <path d="M3,1 Q10,0 12,6" stroke="#e62429" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Name text -->
+  <text x="200" y="370" text-anchor="middle" fill="#e62429" font-size="14" font-family="Inter, sans-serif" font-weight="800" letter-spacing="6" opacity="0.8">SPIDER-MAN</text>
+</svg>
