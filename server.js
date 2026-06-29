@@ -46,6 +46,28 @@ http.createServer((req, res) => {
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ ok: true }));
+        try {
+          const nodemailer = require('nodemailer');
+          const emailPass = process.env.EMAIL_PASS;
+          if (emailPass) {
+            const transporter = nodemailer.createTransport({
+              host: 'smtp.gmail.com', port: 587, secure: false,
+              auth: { user: 'galangmunawar3@gmail.com', pass: emailPass },
+            });
+            await transporter.sendMail({
+              from: '"Portfolio Contact" <galangmunawar3@gmail.com>',
+              replyTo: email || 'anonymous@unknown.com',
+              to: 'galangmunawar3@gmail.com',
+              subject: `Pesan dari ${name} - Portfolio`,
+              text: `Nama: ${name}\nEmail: ${email || '(tidak diisi)'}\nPesan: ${message}`,
+            });
+          }
+        } catch (emailErr) {
+          console.error('Email error:', emailErr.message);
+        }
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true }));
       } catch (err) {
         console.error('Error:', err.message, err.stack);
         res.writeHead(500, { 'Content-Type': 'application/json' });
