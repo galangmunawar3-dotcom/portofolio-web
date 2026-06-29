@@ -47,9 +47,9 @@ http.createServer((req, res) => {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ ok: true }));
       } catch (err) {
-        console.error('Error:', err);
+        console.error('Error:', err.message, err.stack);
         res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ ok: false }));
+        res.end(JSON.stringify({ ok: false, error: err.message }));
       }
     });
     return;
